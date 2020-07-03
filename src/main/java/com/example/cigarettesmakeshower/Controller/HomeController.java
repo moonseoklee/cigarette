@@ -39,16 +39,18 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("test");
 
 
-
+        System.out.println(someService.getSome());
         model.addAttribute("id", someService.getSome());
 
         return mv;
     }
 
     @PostMapping("/test")
-    public void PostTest(@RequestBody SomeModel some){
+    public String PostTest(@RequestBody SomeModel some){
 
 
         someService.insertSome(some.getTitle(),some.getPrice());
+
+        return "true";
     }
 }

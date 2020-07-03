@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Data
+@Builder
 public class SomeModel {
 
     @Id
