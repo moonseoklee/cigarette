@@ -11,22 +11,20 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.cigarettesmakeshower.dao")
+@MapperScan(basePackages = "com.example.cigarettesmakeshower.Dao")
 public class DataAccessConfig {
 
     @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+    public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception {
+        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+        sqlSessionFactory.setDataSource(datasource);
 
-        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-
-        sessionFactory.setDataSource(dataSource);
-        sessionFactory.setMapperLocations(
-                new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-        return sessionFactory.getObject();
+        sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:static/mapper/*.xml"));
+        return sqlSessionFactory.getObject();
     }
 
     @Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+    public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
