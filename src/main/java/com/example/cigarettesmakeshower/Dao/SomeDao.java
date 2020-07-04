@@ -3,10 +3,12 @@ package com.example.cigarettesmakeshower.Dao;
 import com.example.cigarettesmakeshower.Model.SomeModel;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 
 @Mapper
 public interface SomeDao{
-    SomeModel getSome();
+    List<SomeModel> getSome();
 
-    void insertSome(String title,Integer price);
+    void insertSome(SomeModel some);
 }

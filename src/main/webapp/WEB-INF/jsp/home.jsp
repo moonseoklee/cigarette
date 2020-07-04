@@ -2,9 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <script type="text/javascript" src="./javascript/inputFunction.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script type="text/javascript" src="javascript/inputFunction.js"></script>
 
 </head>
 <body>
@@ -16,9 +16,9 @@
         I smokes <input type="text" name="txt"  onkeypress="checkInput(this.value)"> a day
     </div>
     <div class="buttons">
+        <img src="../../webapp/res/static/images/clothes.png" onclick="imageClick()">
         <img src="images/car.png" onclick="imageClick()">
-        <img src="images/car.png" onclick="">
-        <img src="images/car.png" onclick="">
+        <img src="images/car.png" onclick="imageClick()">
     </div>
     <div class="addButtonArea">
         <button id="addButton">click!</button>
@@ -26,7 +26,14 @@
     <div id="modal" class="modal">        <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <%--@elvariable id="some" type=""--%>
+            <form action="/submitSome" method="post" enctype="multipart/form-data">
+                Title:<input name="title"/><br>
+                Price:<input name="price"/><br>
+                <input type="file" name="file" />
+                <br>
+                <input type="submit"/>
+            </form>
         </div>
 
     </div>

@@ -20,7 +20,6 @@ import javax.persistence.Table;
 public class SomeModel {
 
     @Id
-    @GeneratedValue
     private int id;
 
     private String title;

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SomeService {
 
-    SomeModel getSome();
+    List<SomeModel> getSome();
 
     void insertSome(String title,Integer price);
 

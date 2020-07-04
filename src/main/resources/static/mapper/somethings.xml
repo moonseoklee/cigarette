@@ -5,7 +5,8 @@
 <mapper namespace="com.example.cigarettesmakeshower.Dao.SomeDao">
     <select id="getSome" resultType="com.example.cigarettesmakeshower.Model.SomeModel">
 		select * from some
-	</select><insert id="insertSome" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
+	</select>
+	<insert id="insertSome" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
 		insert into some
 		(
 			title,price
