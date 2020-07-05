@@ -10,5 +10,5 @@ import java.util.List;
 public interface SomeDao{
     List<SomeModel> getSome();
 
-    void insertSome(SomeModel some);
+    void uploadFile(SomeModel some);
 }

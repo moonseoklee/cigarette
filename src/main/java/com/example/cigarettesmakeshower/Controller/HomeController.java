@@ -29,6 +29,9 @@ public class HomeController {
     @Autowired
     SomeService someService;
 
+    @Autowired
+    SomeService uploadFile;
+
     @GetMapping("/")
     public ModelAndView Home(Model model){
 
@@ -50,17 +53,19 @@ public class HomeController {
     }
 
     @PostMapping("/submitSome")
-    public ModelAndView PostTest(@RequestParam("file") MultipartFile file, SomeModel some, HttpServletRequest request) throws IOException {
+    public void PostTest(@RequestParam("file") MultipartFile file, SomeModel some, HttpServletRequest request) throws IOException {
 
         ModelAndView mv = new ModelAndView("home");
 
 
 
-        String filePath ="../../resources/static/images/"+file.getOriginalFilename();
-        file.transferTo(new File(filePath));
+        //String filePath ="../../resources/static/images/"+file.getOriginalFilename();
+        //file.transferTo(new File(filePath));
 
-        someService.insertSome(some.getTitle(),some.getPrice());
+        uploadFile.uploadFile(some.getTitle(),some.getPrice(),file);
 
-        return mv;
+
+
+
     }
 }

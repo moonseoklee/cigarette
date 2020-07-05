@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ page import="java.util.List"%>
+
 <html>
+
+<% List some = (List)session.getAttribute("some");%>
+
 <head>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/modal.css">
@@ -16,9 +21,10 @@
         I smokes <input type="text" name="txt"  onkeypress="checkInput(this.value)"> a day
     </div>
     <div class="buttons">
-        <img src="../../webapp/res/static/images/clothes.png" onclick="imageClick()">
-        <img src="images/car.png" onclick="imageClick()">
-        <img src="images/car.png" onclick="imageClick()">
+
+            <c:forEach items="${some}" var = "t">
+                <img src="${t.url}" onclick="imageClick()">
+            </c:forEach>
     </div>
     <div class="addButtonArea">
         <button id="addButton">click!</button>

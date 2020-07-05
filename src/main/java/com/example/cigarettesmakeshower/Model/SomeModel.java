@@ -24,4 +24,5 @@ public class SomeModel {
 
     private String title;
     private Integer price;
+    private String url;
 }

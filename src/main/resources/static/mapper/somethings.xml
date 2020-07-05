@@ -6,13 +6,13 @@
     <select id="getSome" resultType="com.example.cigarettesmakeshower.Model.SomeModel">
 		select * from some
 	</select>
-	<insert id="insertSome" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
+	<insert id="uploadFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
 		insert into some
 		(
-			title,price
+			title,price,url
 		)
 		values(
-			#{title},#{price}
+			#{title},#{price},#{url}
 		)
 	</insert>
 </mapper>
