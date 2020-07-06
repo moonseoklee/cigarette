@@ -4,7 +4,7 @@
 
 <html>
 
-<% List some = (List)session.getAttribute("some");%>
+
 
 <head>
     <link rel="stylesheet" href="css/home.css">
@@ -21,10 +21,18 @@
         I smokes <input type="text" name="txt"  onkeypress="checkInput(this.value)"> a day
     </div>
     <div class="buttons">
-
+    <div class="buttonsLeft">
+            <% List some = (List)session.getAttribute("some");%>
             <c:forEach items="${some}" var = "t">
                 <img src="${t.url}" onclick="imageClick()">
             </c:forEach>
+    </div>
+    <div class="buttonsRight">
+
+        <c:forEach items="${some}" var = "t">
+            <img src="${t.url}" onclick="imageClick()">
+        </c:forEach>
+    </div>
     </div>
     <div class="addButtonArea">
         <button id="addButton">click!</button>
