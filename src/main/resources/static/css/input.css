@@ -1,0 +1,73 @@
+.modal .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 80%;
+
+}
+
+.modal .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.modal .form__field::placeholder {
+    color: transparent;
+}
+
+
+
+.modal .form__label {
+    font-size:x-large;
+    font-weight: bold;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: yellow;
+}
+
+.modal .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+
+
+/* reset input */
+.modal .form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.modal .inputFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.modal .inputFile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: yellow;
+    background-color: transparent;
+    display: inline-block;
+    text-align: center;
+    margin-top:10px;
+}
+
+.modal .inputFile:focus + label,
+.modal .inputFile + label:hover {
+    background-color: red;
+
+}

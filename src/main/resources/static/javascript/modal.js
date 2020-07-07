@@ -1,27 +1,38 @@
 var modal = document.getElementById("modal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("addButton");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
+var btn = $(document.getElementById("addButton"));
 
 
-btn.onclick = function() {
-    modal.style.display = "block";
-    console.log('click');
-}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+
+var file = document.getElementById("file");
+
+
+
+
+btn.click( function() {
+    modal.style.display = "flex";
+
+});
+
+
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
+window.onclick = function(e) {
+    console.log($(e.target).parents("#modal").length);
+    if($(e.target).context!=btn.context && modal.style.display=="flex" && (e.target)!=modal && !$(e.target).parents("#modal").length){
         modal.style.display = "none";
     }
+
+
+
+
+}
+
+file.addEventListener("change",handleFiles,false)
+
+function handleFiles(){
+
+    document.getElementById("fileUploadLabel").innerHTML=(this.files[0].name);
 }

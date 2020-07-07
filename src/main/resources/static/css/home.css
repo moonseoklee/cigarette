@@ -8,7 +8,7 @@ body{
 }
 
 .mainImage{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -16,7 +16,7 @@ body{
 }
 
 .howMuch{
-    position: absolute;
+    position: fixed;
     top: 83%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -86,5 +86,5 @@ body{
 .addButtonArea{
     top: 93%;
     left: 50%;
-    position: absolute;
+    position: fixed;
 }
