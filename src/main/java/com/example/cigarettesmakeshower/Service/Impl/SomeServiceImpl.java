@@ -33,10 +33,11 @@ public class SomeServiceImpl implements SomeService {
         SomeModel model = new SomeModel();
         model.setPrice(price);
         model.setTitle(title);
+
         model.setUrl("images/"+file.getOriginalFilename());
         file.transferTo(new File("C:\\Users\\winny\\Desktop\\MS\\coding\\cigarettesmakeshower\\src\\main\\resources\\static\\images\\"+file.getOriginalFilename()));
         dao.uploadFile(model);
-        System.out.println(model.getId());
+
     }
 
 

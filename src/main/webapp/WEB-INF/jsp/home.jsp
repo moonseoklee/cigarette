@@ -16,23 +16,27 @@
 </head>
 <body>
 <div class="main">
+    <div class="cost" id="cost"></div>
     <div class="mainImage">
         <img src="images/cigar.png">
     </div>
     <div class="howMuch">
-        I smokes <input type="text" name="txt"  onkeypress="checkInput(this.value)"> a day
+        I smokes
+        <input style="width:60px" type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+        a day
     </div>
     <div class="buttons">
     <div class="buttonsLeft">
             <% List some = (List)session.getAttribute("some");%>
             <c:forEach items="${some}" var = "t">
-                <img src="${t.url}" onclick="imageClick()">
+
+                <img src="${t.url}" onclick="imageClick(${t.price})">
             </c:forEach>
     </div>
     <div class="buttonsRight">
 
         <c:forEach items="${some}" var = "t">
-            <img src="${t.url}" onclick="imageClick()">
+            <img src="${t.url}" onclick="imageClick(${t.price})">
         </c:forEach>
     </div>
     </div>

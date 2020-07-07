@@ -57,7 +57,7 @@ public class HomeController {
 
         ModelAndView mv = new ModelAndView("home");
 
-
+        System.out.println(file);
 
         //String filePath ="../../resources/static/images/"+file.getOriginalFilename();
         //file.transferTo(new File(filePath));

@@ -7,6 +7,17 @@ body{
     position: relative;
 }
 
+.cost{
+    color:white;
+    font-weight: 100;
+    font-size:5em;
+    text-align: center;
+    margin-left:635px;
+    width:35%;
+    position: relative;
+    z-index:3;
+}
+
 .mainImage{
     position: fixed;
     top: 50%;

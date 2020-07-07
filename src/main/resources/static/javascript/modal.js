@@ -20,7 +20,7 @@ btn.click( function() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(e) {
-    console.log($(e.target).parents("#modal").length);
+
     if($(e.target).context!=btn.context && modal.style.display=="flex" && (e.target)!=modal && !$(e.target).parents("#modal").length){
         modal.style.display = "none";
     }
