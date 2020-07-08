@@ -4,10 +4,10 @@
 
 <mapper namespace="com.example.cigarettesmakeshower.Dao.SomeDao">
     <select id="getSome" resultType="com.example.cigarettesmakeshower.Model.SomeModel">
-		select * from some
+		select * from some_model
 	</select>
 	<insert id="uploadFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
-		insert into some
+		insert into some_model
 		(
 			title,price,url
 		)
