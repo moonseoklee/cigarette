@@ -9,10 +9,10 @@
 	<insert id="uploadFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.cigarettesmakeshower.Model.SomeModel">
 		insert into some_model
 		(
-			title,price,url
+			id,title,price,url
 		)
 		values(
-			#{title},#{price},#{url}
+			#{id},#{title},#{price},#{url}
 		)
 	</insert>
 </mapper>

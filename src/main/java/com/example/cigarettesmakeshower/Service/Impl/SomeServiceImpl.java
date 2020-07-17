@@ -36,6 +36,9 @@ public class SomeServiceImpl implements SomeService {
 
         model.setUrl("images/"+file.getOriginalFilename());
         file.transferTo(new File("C:\\Users\\winny\\Desktop\\MS\\coding\\cigarettesmakeshower\\src\\main\\resources\\static\\images\\"+file.getOriginalFilename()));
+
+        System.out.println(title+price+file);
+
         dao.uploadFile(model);
 
     }

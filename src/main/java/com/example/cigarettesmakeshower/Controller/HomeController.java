@@ -53,11 +53,11 @@ public class HomeController {
     }
 
     @PostMapping("/submitSome")
-    public void PostTest(@RequestParam("file") MultipartFile file, SomeModel some, HttpServletRequest request) throws IOException {
+    public String PostTest(@RequestParam("file") MultipartFile file, SomeModel some, HttpServletRequest request) throws IOException {
 
-        ModelAndView mv = new ModelAndView("home");
 
-        System.out.println(file);
+
+
 
         //String filePath ="../../resources/static/images/"+file.getOriginalFilename();
         //file.transferTo(new File(filePath));
@@ -66,6 +66,6 @@ public class HomeController {
 
 
 
-
+        return "redirect:/";
     }
 }
